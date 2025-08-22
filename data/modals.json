@@ -8,6 +8,10 @@
       {
         "title": "禁止事項",
         "content": "不正利用は禁止されています。"
+      },
+      {
+        "title": "ライセンス",
+        "content": "QRコード生成 Copyright (c) 2012 davidshimjs"
       }
     ]
   },

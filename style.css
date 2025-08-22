@@ -18,7 +18,7 @@ body {
 
 
 main {
-  width: 700px;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   /* 2行構造にするため縦並び */
@@ -64,13 +64,19 @@ main {
 section:first-of-type {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
 section:first-of-type textarea {
-  flex: 1;
-  /* テキストエリアを伸ばす */
-  margin-top: 15px; /* 上に3pxずらす */
+  width: 40vw;
+  /* 画面幅の90%に合わせる */
+  max-width: 500px;
+  /* PCでは最大600pxまで */
+  flex: none;
+  /* flex の影響を無効化 */
+  margin-top: 15px;
+  /* 上に3pxずらす */
 }
 
 section:first-of-type button {
@@ -82,7 +88,7 @@ section:first-of-type button {
    QR履歴テキスト
    =========================== */
 
-   /* QR履歴のボーダー */
+/* QR履歴のボーダー */
 .qr-log {
   flex-direction: column;
   display: flex;
@@ -95,21 +101,26 @@ section:first-of-type button {
   padding: 10px 45px;
   /* 内側余白 */
 }
+
 #qrHistory {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;   /* ← 左揃えにする */
-    list-style: decimal; /* 1,2,3… */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  /* ← 左揃えにする */
+  list-style: decimal;
+  /* 1,2,3… */
 }
 
 #qrHistory li {
-    font-size: 14px;
-    line-height: 1.2;
-    word-break: break-word;
-    white-space: normal;
-    max-width: 1000px; /* 必要に応じて調整 */
-    text-align: left;   /* ← li単体でも左揃え */
+  font-size: 14px;
+  line-height: 1.2;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 1000px;
+  /* 必要に応じて調整 */
+  text-align: left;
+  /* ← li単体でも左揃え */
 }
 
 /* ===========================
@@ -121,6 +132,7 @@ section:first-of-type button {
   gap: 10px;
   /* ← QRと保存設定の間隔を広げる */
   align-items: flex-start;
+  justify-items: center;
 }
 
 /* 左側 QR */
@@ -155,8 +167,10 @@ section:first-of-type button {
   /* 上に余白 */
   margin-bottom: 40px;
   /* 下に余白 */
-  width: 250px;
-  height: 250px;
+  height: auto;
+  /* アスペクト比を維持 */
+  max-width: 320px;
+  /* 元のサイズの上限 */
   border: 1px solid #ccc;
   background: #fff;
   display: flex;
@@ -170,8 +184,7 @@ section:first-of-type button {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  flex: 1;
-  width: 100%;
+  max-width: 350px;
   border: 2px solid #858585;
   /* 枠線を白で2pxに */
   border-radius: 10px;
@@ -198,16 +211,14 @@ section:first-of-type button {
   flex-direction: column;
   gap: 10px;
   /* 上下のフォーム間隔 */
-  align-items: flex-start;
+  justify-content: flex-start;
   /* 左揃え */
 }
 
 .qr-right .form-row {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  /* 左揃え */
-  margin-bottom: 8px;
+
   width: 100%;
 }
 
@@ -232,13 +243,13 @@ section:first-of-type button {
 /* 入力欄横幅x0%（名前・特徴用） */
 .qr-right input,
 .qr-right textarea {
-  width: 100%;
+  width: 80%;
   box-sizing: border-box;
 }
 
 /* セレクトボックスだけ横幅x%に */
 .qr-right select {
-  width: 80%;
+  max-width: 200px;
   box-sizing: border-box;
 }
 
