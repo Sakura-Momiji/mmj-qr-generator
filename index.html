@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRコード生成サイト</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- ローカル版QRCode.js -->
+    <script src="qrcode.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>MMJ-NDFQRコード生成</h1>
+    </header>
+    <header>
+        <button id="利用規約Btn">利用規約</button>
+        <button id="使い方Btn">使い方</button>
+        <button id="今回のイベントBtn">今回のイベント</button>
+    </header>
+
+    <main>
+        <section>
+            <h2 id="initialJsonValue">
+                <h2>+</h2>
+            </h2>
+            <textarea id="initialValue" rows="1" placeholder="加算値を入力（英数字のみ）"></textarea>
+            <button id="randomBtn" class="green-button">ランダム生成</button>
+        </section>
+
+        <!-- QRと保存設定を横並びにするラッパー -->
+        <div class="qr-section">
+            <!-- 左側：見出し＋QR -->
+            <div class="qr-left">
+                <h2>生成されたQRコード</h2>
+                <div id="qrCanvas"></div>
+            </div>
+
+            <!-- 右側：保存設定 -->
+            <section class="qr-right">
+                <h2>QRコードの画像保存設定</h2>
+
+                <!-- 名前 -->
+                <div class="form-row">
+                    <label for="name">名前</label>
+                    <input type="text" id="name">
+                </div>
+
+                <!-- 2列レイアウト -->
+                <div class="form-row-group">
+                    <!-- 左列 -->
+                    <div class="form-column">
+                        <div class="form-row">
+                            <label for="回避率">回避率</label>
+                            <select id="回避率"></select>
+                        </div>
+                        <div class="form-row">
+                            <label for="色">色</label>
+                            <select id="色"></select>
+                        </div>
+                        <div class="form-row">
+                            <label for="アンテナ">アンテナ</label>
+                            <select id="アンテナ"></select>
+                        </div>
+                    </div>
+
+                    <!-- 右列 -->
+                    <div class="form-column">
+                        <div class="form-row">
+                            <label for="体格">体格</label>
+                            <select id="体格"></select>
+                        </div>
+                        <div class="form-row">
+                            <label for="頭">頭</label>
+                            <select id="頭"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- メモ -->
+                <div class="form-row">
+                    <label for="features">メモ：発見者名や濃淡色、顔素材など<br>何か書いておく場所</label>
+                    <textarea id="features" rows="2"></textarea>
+                </div>
+
+                <!-- 保存ボタン -->
+                <div class="form-row">
+                    <button id="saveBtn" class="green-button">保存</button>
+                </div>
+            </section>
+        </div>
+        <section class="qr-log">
+        <h2>ランダムテキスト履歴-最大30件-</h2>
+        <ul id="qrHistory"></ul>
+        </section>
+    </main>
+
+    <!-- 保存結果モーダル -->
+    <div id="resultModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="closeBtn">×</span>
+            <div class="result-wrapper">
+                <img id="resultImage" src="" alt="生成結果">
+                <!--<button id="copyImageBtn" class="green-button">コピー</button>-->
+                <button id="downloadBtn" class="green-button">ダウンロード</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 共通モーダル -->
+    <div id="infoModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-left"></div>
+            <div class="modal-right"></div>
+            <span class="closeBtn">×</span>
+        </div>
+    </div>
+
+    <!-- 自作スクリプト -->
+    <script src="app.js"></script>
+</body>
+
+</html>

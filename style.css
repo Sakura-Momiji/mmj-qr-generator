@@ -1,0 +1,385 @@
+/* ===========================
+   全体中央揃え
+   =========================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+/* main セクションの幅調整 */
+
+
+main {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  /* 2行構造にするため縦並び */
+  gap: 20px;
+}
+
+/* ===========================
+   ボタンのレイアウト
+   =========================== */
+.green-button {
+  background-color: #4CAF50;
+  /* ボタンの背景色（緑） */
+  color: white;
+  /* 文字色 */
+  border: none;
+  /* ボタンの枠線を消す */
+  padding: 10px 20px;
+  /* 内側の余白 */
+  text-align: center;
+  /* 文字を中央に */
+  text-decoration: none;
+  /* 下線を消す */
+  display: inline-block;
+  /* 横並び用 */
+  font-size: 16px;
+  /* 文字サイズ */
+  border-radius: 5px;
+  /* 角丸 */
+  cursor: pointer;
+  /* マウスオーバー時の指カーソル */
+  transition: background-color 0.3s;
+  /* ホバー時の色変化を滑らかに */
+}
+
+/* ホバー時に色を変える */
+.green-button:hover {
+  background-color: #45a049;
+}
+
+/* ===========================
+   上段：初期値 + ランダム生成
+   =========================== */
+section:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+section:first-of-type textarea {
+  flex: 1;
+  /* テキストエリアを伸ばす */
+  margin-top: 15px; /* 上に3pxずらす */
+}
+
+section:first-of-type button {
+  flex: 0 0 auto;
+  /* ボタンは固定サイズ */
+}
+
+/* ===========================
+   QR履歴テキスト
+   =========================== */
+
+   /* QR履歴のボーダー */
+.qr-log {
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 2px solid #858585;
+  /* 枠線を白で2pxに */
+  border-radius: 10px;
+  /* 角丸の大きさ */
+  padding: 10px 45px;
+  /* 内側余白 */
+}
+#qrHistory {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;   /* ← 左揃えにする */
+    list-style: decimal; /* 1,2,3… */
+}
+
+#qrHistory li {
+    font-size: 14px;
+    line-height: 1.2;
+    word-break: break-word;
+    white-space: normal;
+    max-width: 1000px; /* 必要に応じて調整 */
+    text-align: left;   /* ← li単体でも左揃え */
+}
+
+/* ===========================
+   下段：QRコード + 保存設定
+   =========================== */
+/* QR + 保存設定を横並びにするラッパー */
+.qr-section {
+  display: flex;
+  gap: 10px;
+  /* ← QRと保存設定の間隔を広げる */
+  align-items: flex-start;
+}
+
+/* 左側 QR */
+.qr-left {
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 2px solid #858585;
+  /* 枠線を白で2pxに */
+  border-radius: 10px;
+  /* 角丸の大きさ */
+  padding: 10px 45px;
+  /* 内側余白 */
+}
+
+.qr-left-border {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 2px solid #858585;
+  /* 枠線を白で2pxに */
+  border-radius: 10px;
+  /* 角丸の大きさ */
+  padding: 10px 45px;
+  /* 内側余白 */
+}
+
+/* QRキャンバス */
+#qrCanvas {
+  margin-top: 20px;
+  /* 上に余白 */
+  margin-bottom: 40px;
+  /* 下に余白 */
+  width: 250px;
+  height: 250px;
+  border: 1px solid #ccc;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* 右側 保存設定 */
+.qr-right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  width: 100%;
+  border: 2px solid #858585;
+  /* 枠線を白で2pxに */
+  border-radius: 10px;
+  /* 角丸の大きさ */
+  padding: 10px 20px;
+  /* 内側余白 */
+}
+
+/* 見出し中央 */
+.qr-right h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* 各行セット */
+.qr-right .form-row-group {
+  display: flex;
+  gap: 5px;
+  /* 左右の列間 */
+}
+
+.qr-right .form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* 上下のフォーム間隔 */
+  align-items: flex-start;
+  /* 左揃え */
+}
+
+.qr-right .form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* 左揃え */
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.qr-right label {
+  margin-bottom: 4px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.qr-right input,
+.qr-right select,
+.qr-right textarea {
+  width: 100%;
+  /* 左揃えで揃える */
+  box-sizing: border-box;
+}
+
+.qr-right button {
+  padding: 6px 12px;
+}
+
+/* 入力欄横幅x0%（名前・特徴用） */
+.qr-right input,
+.qr-right textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* セレクトボックスだけ横幅x%に */
+.qr-right select {
+  width: 80%;
+  box-sizing: border-box;
+}
+
+/* 保存ボタン左揃え */
+.qr-right #saveBtn {
+  align-self: flex-start;
+  margin-top: 5px;
+}
+
+/* ===========================
+   =========================== */
+
+/* セクション見出し */
+section h2 {
+  margin-bottom: 10px;
+}
+
+/* 入力欄・テキストエリア・セレクトボックス */
+textarea,
+input,
+select {
+  width: 80%;
+  padding: 5px;
+  font-size: 16px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+/* ボタン */
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+/* ===========================
+   保存設定部分の左揃え
+   =========================== */
+section label {
+  display: block;
+  text-align: left;
+  margin: 5px 0;
+}
+
+/* ===========================
+   モーダル
+   =========================== */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .5);
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 10
+}
+
+.modal-content {
+  position: relative;
+  /* 親基準にする */
+  background: #fff;
+  /* 白背景 */
+  padding: 20px;
+  width: 90%;
+  max-width: 630px;
+  max-height: 90%;
+  min-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* 画像とDLボタンを縦に配置 */
+.result-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* 横方向の中央揃え */
+  gap: 10px;
+  /* 画像とボタンの間隔 */
+}
+
+/* ×印を右上に固定 */
+.modal-content .closeBtn {
+  position: absolute;
+  /* 親基準で絶対配置 */
+  top: 5px;
+  /* 上から少し余白 */
+  right: 5px;
+  /* 右から少し余白 */
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  background: none;
+  border: none;
+  z-index: 10;
+  /* 左右分割より前面に表示 */
+}
+
+
+/* モーダル左（目次） */
+.modal-left {
+  flex: 1;
+  text-align: left;
+  border-right: 1px solid #ccc;
+  padding-right: 10px;
+}
+
+/* モーダル右（内容表示） */
+.modal-right {
+  flex: 2;
+  text-align: left;
+  padding-left: 10px;
+}
+
+/* メニュー項目 */
+.menu-item {
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* 選択中の項目 */
+.menu-item.active {
+  background-color: #d0f0ff;
+  font-weight: bold;
+}
+
+/* ===========================
+   保存したQRの合成画像用背景
+   =========================== */
+#resultModal img {
+  background-color: #fff;
+  /* QRとテキスト合成時の背景を白に */
+  display: block;
+  margin: 0 auto;
+}
