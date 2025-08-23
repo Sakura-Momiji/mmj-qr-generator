@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
 
             // 特徴
-            const featureLines = [`特徴:`, features]; // 改行したい部分で配列に分ける
+            const featureLines = [`メモ:`, features]; // 改行したい部分で配列に分ける
             let lineY = space_y; // 描画開始Y座標
 
             ctx.font = "16px sans-serif";
