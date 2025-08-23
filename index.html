@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QRコード生成サイト</title>
+    <title>QRコード生成サイト101</title>
     <link rel="stylesheet" href="style.css">
     <!-- ローカル版QRCode.js -->
     <script src="qrcode.min.js"></script>
@@ -21,11 +21,10 @@
     </header>
 
     <main>
-        <section>
-            <h2 id="initialJsonValue">
-                <h2>+</h2>
-            </h2>
-            <textarea id="initialValue" rows="1" placeholder="加算値を入力（英数字のみ）"></textarea>
+        <section class="random-text-code">
+            <h2 id="initialJsonValue">initialJsonValue</h2>
+            <h2>+</h2>
+            <input id="initialValue" class="randomtextcodeinput" placeholder="加算値を入力（英数字のみ）">
             <button id="randomBtn" class="green-button">ランダム生成</button>
         </section>
 
@@ -91,8 +90,9 @@
             </section>
         </div>
         <section class="qr-log">
-        <h2>ランダムテキスト履歴-最大30件-</h2>
-        <ul id="qrHistory"></ul>
+            <h2>ランダムテキスト履歴</h2>
+            <h4>再現する場合はmmjndfqr〇〇〇〇〇〇_の後の文字をコピーしてください。<br>一定期間が過ぎると再現不可能になります。</h4>
+            <ul id="qrHistory"></ul>
         </section>
     </main>
 

@@ -61,27 +61,26 @@ main {
 /* ===========================
    上段：初期値 + ランダム生成
    =========================== */
-section:first-of-type {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+.random-text-code {
+  display: flex;          /* 中だけ横並び */
+  align-items: center;    /* 縦の位置をそろえる */
+  gap: 10px;              /* 横の間隔 */
 }
 
-section:first-of-type textarea {
-  width: 40vw;
-  /* 画面幅の90%に合わせる */
-  max-width: 500px;
-  /* PCでは最大600pxまで */
-  flex: none;
-  /* flex の影響を無効化 */
-  margin-top: 15px;
-  /* 上に3pxずらす */
+.randomtextcodeinput {
+  width: 50%;
+  max-width: 400px;
+  height: 40px;
+  padding: 5px 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* padding込みで幅を指定 */
 }
 
-section:first-of-type button {
-  flex: 0 0 auto;
-  /* ボタンは固定サイズ */
+.randomtextcodeinput:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(72, 239, 128, 0.5);
 }
 
 /* ===========================
@@ -91,9 +90,7 @@ section:first-of-type button {
 /* QR履歴のボーダー */
 .qr-log {
   flex-direction: column;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  gap: 2px;
   border: 2px solid #858585;
   /* 枠線を白で2pxに */
   border-radius: 10px;
@@ -271,7 +268,6 @@ section h2 {
 textarea,
 input,
 select {
-  width: 80%;
   padding: 5px;
   font-size: 16px;
   margin: 5px 0;
