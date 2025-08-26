@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         item.addEventListener("click", () => {
                             left.querySelectorAll(".menu-item").forEach((el) => el.classList.remove("active"));
                             item.classList.add("active");
-                            right.textContent = section.content;
+                            right.innerHTML = section.content;
                         });
                         left.appendChild(item);
                     });
