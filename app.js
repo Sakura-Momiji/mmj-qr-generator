@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         left.appendChild(item);
                     });
                     // 最初の内容を右に表示
-                    right.textContent = modals[key].sections[0].content;
+                    right.innerHTML = modals[key].sections[0].content;
 
                     modal.style.display = "flex";
                 });
